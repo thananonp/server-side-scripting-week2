@@ -8,7 +8,9 @@ const port = 3000;
 // });
 
 const cat = require('./routes/catRoute.js')
-app.use('/', cat)
+const user = require('./routes/userRoute.js')
+app.use('/cat', cat)
+app.use('/user', user)
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
