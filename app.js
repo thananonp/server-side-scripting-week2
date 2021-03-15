@@ -3,8 +3,21 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/cat', (req, res) => {
-  res.send('From this endpoint you can get cats.')
-});
+// app.get('/cat', (req, res) => {
+//   res.send('From this endpoint you can get cats.')
+// });
+
+app.route('/cat')
+    .delete(function (req, res) {
+        res.send('With this endpoint you can delete cats.')
+    })
+    .post(function (req, res) {
+        res.send('With this endpoint you can add cats.')
+    })
+    .put(function (req, res) {
+        res.send('With this endpoint you can edit cats.')
+    })
+
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
