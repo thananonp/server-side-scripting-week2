@@ -18,6 +18,9 @@ app.route('/cat')
         res.send('With this endpoint you can edit cats.')
     })
 
-
+app.get('/cat/:id',function (req,res){
+    res.send("You requested a cat whose id is " + req.params.id)
+    console.log("Cat "+ req.params.id + " is requested")
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
