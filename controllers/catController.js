@@ -16,7 +16,9 @@ const cat_get = (req, res) => {
 
 const addNewCat = (req, res) => {
     console.log(req.file)
-    res.send("File received")
+    if (req.file != null)
+        res.send(req.file.originalname + "File received")
+    else res.send("Error")
 }
 
 module.exports = {
