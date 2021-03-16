@@ -1,5 +1,6 @@
 // Controller
 'use strict';
+
 const userModel = require('../models/userModel');
 
 const users = userModel.users;
@@ -15,7 +16,12 @@ const getUser = (req, res) => {
     res.json(selectedUser)
 }
 
+const logNewUser = (req, res) => {
+    console.log(req.body)
+}
+
 module.exports = {
     getAllUsers,
-    getUser
+    getUser,
+    logNewUser
 };
