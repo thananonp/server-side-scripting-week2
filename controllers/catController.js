@@ -1,5 +1,6 @@
 // Controller
 'use strict';
+
 const catModel = require('../models/catModel');
 
 const cats = catModel.cats;
@@ -13,7 +14,13 @@ const cat_get = (req, res) => {
     res.json(selectedCat)
 }
 
+const addNewCat = (req, res) => {
+    console.log(req.file)
+    res.send("File received")
+}
+
 module.exports = {
     cat_list_get,
-    cat_get
+    cat_get,
+    addNewCat
 };

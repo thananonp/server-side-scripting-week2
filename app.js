@@ -4,6 +4,10 @@ const app = express();
 const bodyparser = require("body-parser")
 const cors = require('cors')
 const port = 3000;
+const multer = require('multer')
+const upload = multer({dest: 'uploads/'})
+//serving static content
+app.use(express.static('public_html'))
 //allow the POST request to be read
 app.use(bodyparser.urlencoded({extended: true}))
 //allow other source of webpage to load resource from this web server
