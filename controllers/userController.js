@@ -5,7 +5,7 @@ const userModel = require('../models/userModel');
 
 const users = userModel.users;
 //delete password before sending out
-users.forEach(user => delete user['password'])
+// users.forEach(user => delete user['password'])
 
 const getAllUsers = (req, res) => {
     res.json(users);

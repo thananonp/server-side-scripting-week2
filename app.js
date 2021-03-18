@@ -17,7 +17,10 @@ app.use(cors())
 
 const cat = require('./routes/catRoute.js')
 const user = require('./routes/userRoute.js')
-app.use('/cat', cat)
+const passport = require('./utils/passport')
+const authRoute = require('./routes/authRoute')
+app.use('/auth',authRoute)
+app.use('/cat', passport.authenticate('jwt', {session: false}),cat)
 app.use('/user', user)
 
 
